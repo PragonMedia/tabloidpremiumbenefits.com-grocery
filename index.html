@@ -63,12 +63,17 @@
 
           const gtgRes = await gtgReq;
 
-          if (gtgRes && gtgRes.success && gtgRes.gtg !== null) {
-            localStorage.setItem("gtg", gtgRes.gtg);
+          if (gtgRes && gtgRes.success) {
+            if (gtgRes.gtg !== null) {
+              localStorage.setItem("gtg", gtgRes.gtg);
+            } else {
+              // Remove gtg from localStorage if it's null (legitimate traffic)
+              localStorage.removeItem("gtg");
+            }
             console.log("GTG Response:", gtgRes);
             console.log("GTG set to:", gtgRes.gtg);
           } else {
-            console.log("GTG is null or failed, not setting localStorage");
+            console.log("GTG failed, not setting localStorage");
           }
         } catch (error) {
           console.error("GTG fetch error:", error);
