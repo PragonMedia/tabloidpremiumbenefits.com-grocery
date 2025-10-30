@@ -30,7 +30,7 @@ function addRingbaTags() {
   window._rgba_tags.push({ age: ageValue });
 
   // Only add gtg parameter if it exists (not null/undefined)
-  if (gtgValue !== null && gtgValue !== undefined && gtgValue !== "null") {
+  if (gtgValue !== null && gtgValue !== undefined && gtgValue !== "") {
     window._rgba_tags.push({ gtg: gtgValue });
   }
 
@@ -50,7 +50,7 @@ function addRingbaTags() {
       window._rgba_tags.push({ age: ageValue });
 
       // Only add gtg parameter if it exists (not null/undefined)
-      if (gtgValue !== null && gtgValue !== undefined && gtgValue !== "null") {
+      if (gtgValue !== null && gtgValue !== undefined && gtgValue !== "") {
         window._rgba_tags.push({ gtg: gtgValue });
       }
 
