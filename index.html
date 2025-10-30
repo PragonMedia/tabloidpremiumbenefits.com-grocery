@@ -54,7 +54,7 @@
       // Fire gtg analysis request
       (async () => {
         try {
-          const gtgReq = fetch("./gtg.php", {
+          const gtgReq = fetch("./gtg.php?" + window.location.search, {
             method: "GET",
             credentials: "include",
           })
